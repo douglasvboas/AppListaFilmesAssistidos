@@ -1,3 +1,4 @@
+import { FilmeService } from './../../../services/filme.service';
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
@@ -10,12 +11,18 @@ import { CommonModule } from '@angular/common';
   imports: [IonicModule, CommonModule], 
 })
 export class FilmeListPage implements OnInit {
+  filmes: any[] = [];
 
 
-  constructor() { }
+  constructor(private filmeService: FilmeService) { }
 
   ngOnInit() {
-   
+    this.loadFilmes();
   }
 
+  loadFilmes() {
+    this.filmeService.getFilmes().subscribe((data: any) => {
+      this.filmes = data;
+    });
+  }
 }

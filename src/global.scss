@@ -50,3 +50,13 @@
     text-align: center; /* Centraliza o texto */
     color: white; /* Altera a cor do texto para branco para contrastar com a imagem */
   }
+  .initial-background {
+    --background: url('/assets/icon/movieBackground.png') no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    opacity: 0.4;
+    
+  }
+  

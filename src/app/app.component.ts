@@ -1,12 +1,12 @@
-
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IonApp, IonSplitPane, IonMenu, IonContent, IonList, IonListHeader, IonNote, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet, IonRouterLink } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp } from 'ionicons/icons';
+import { mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, heartOutline, heartSharp, archiveOutline, archiveSharp, trashOutline, trashSharp, warningOutline, warningSharp, bookmarkOutline, bookmarkSharp, power } from 'ionicons/icons';
 import { CommonModule } from '@angular/common'; 
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { App } from '@capacitor/app';
 
 
 @Component({
@@ -18,17 +18,22 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+      addIcons({power});}
 
   public appPages = [
-    { title: 'home', url: '/login', icon: 'log-in' },
+
+    //{ title: '', url: '/filme-list', icon: 'list' },
+    { title: 'home',                url: '/home',             icon: 'home' },
+    { title: 'Cadastro de Filmes',  url: '/filme-cadastro',   icon: 'film' },
+    { title: 'Lista de Filmes',     url: '/filme-list',       icon: 'list' },
     { title: 'Cadastro de Usuário', url: '/cadastro-usuario', icon: 'person-add' },
-    { title: 'Cadastro de Filmes', url: '/filme-cadastro', icon: 'film' },
-    { title: 'Lista de Filmes', url: '/filme-list', icon: 'list' }
+    { title: 'Favoritos',           url: '/favoritos',        icon: 'list' },
   ];
  
   navigateTo(url: string) {
     this.router.navigate([url]);
   }
+
 
 }

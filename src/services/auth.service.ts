@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8100/api.php';  // URL da sua API
+  private apiUrl = 'http://localhost:8100/appMovie/api.php';  
 
   constructor(private http: HttpClient) {}
 

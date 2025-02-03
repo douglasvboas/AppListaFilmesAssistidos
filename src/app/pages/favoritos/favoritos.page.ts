@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonImg } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-filme-cadastro',
-  templateUrl: './filme-cadastro.page.html',
-  styleUrls: ['./filme-cadastro.page.scss'],
+  selector: 'app-favoritos',
+  templateUrl: './favoritos.page.html',
+  styleUrls: ['./favoritos.page.scss'],
   standalone: true,
   imports: [IonImg, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class FilmeCadastroPage implements OnInit {
+export class FavoritosPage implements OnInit {
 
   constructor() { }
 

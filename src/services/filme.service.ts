@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FilmeService {
-  private apiUrl = 'http://localhost:8100/api.php';
+  private apiUrl = 'http://localhost:8100/appMovie/api.php';
 
   constructor(private http: HttpClient) { }
 
