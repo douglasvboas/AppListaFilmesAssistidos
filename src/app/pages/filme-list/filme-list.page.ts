@@ -1,28 +1,21 @@
-import { FilmeService } from './../../../services/filme.service';
-import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { IonContent, IonTitle, IonToolbar, IonHeader, IonButtons, IonImg } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-filme-list',
-  standalone: true,
   templateUrl: './filme-list.page.html',
   styleUrls: ['./filme-list.page.scss'],
-  imports: [IonicModule, CommonModule], 
+  standalone: true,
+  imports: [ IonButtons, IonImg,  IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class FilmeListPage implements OnInit {
-  filmes: any[] = [];
+export class FilmeListPage  implements OnInit {
+  router: any;
 
-
-  constructor(private filmeService: FilmeService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.loadFilmes();
-  }
 
-  loadFilmes() {
-    this.filmeService.getFilmes().subscribe((data: any) => {
-      this.filmes = data;
-    });
   }
 }

@@ -18,4 +18,3 @@ export class FilmeService {
     return this.http.post(this.apiUrl, filme);
   }
 }
-  
