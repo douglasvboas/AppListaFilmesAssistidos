@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-img src="assets/icon/favicou.png" alt="Logo"></ion-img> <!-- Logo na parte superior esquerda -->
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div style="margin-top: 140px;" ></div>
+
+<ion-content>
+  <div class="login-container">
+    <!-- Campo de Usuário -->
+    <ion-item>
+      <ion-label position="floating">Usuário</ion-label>
+      <ion-input [(ngModel)]="username" type="text" required></ion-input>
+    </ion-item>
+
+    <!-- Campo de Email -->
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" type="email" required></ion-input>
+    </ion-item>
+
+    <!-- Campo de Senha -->
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input [(ngModel)]="password" type="password" required></ion-input>
+    </ion-item>
+  <div>
+    <div style="margin-top: 20px;" ></div>
+
+  <div class="login-container">
+      <!-- Botão de Login -->
+      <ion-button expand="full" (click)="login()">Login</ion-button>
+      
+      <!-- Botão para Criar Conta -->
+      <ion-button expand="full" (click)="goToSignup()">Criar Conta</ion-button>
+  </div>
+</div>
+</div>
+</ion-content>
