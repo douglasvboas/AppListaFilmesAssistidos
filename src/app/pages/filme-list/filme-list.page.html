@@ -3,19 +3,30 @@
     <ion-buttons slot="start">
       <ion-img src="assets/icon/favicou.png" alt="Logo"></ion-img> 
     </ion-buttons>
-    <ion-title style="color:blue">Lista de filmes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openMenu()">
+        <ion-icon name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons> 
+    <ion-title style="color:blue">Minha Lista de Filmes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
-
-<div style="margin-top: 140px;" ></div>
-
-<ion-content class="initial-background">
-
-<ion-header>
-  <h2>testes</h2>
-
-</ion-header>
+<div style="margin-top: 110px;" ></div>
+<ion-content>
+  <!--<h3 style="font-family:' Verdana'; color: blue; text-align: center;">Estes são meus filmes assistidos!</h3>-->
+  <ion-list>
+    <ion-item *ngFor="let filme of filmes">
+      <ion-label>
+        <h2>{{ filme.nome }}</h2>
+        <p>{{ filme.descricao }}</p>
+        <p><strong>Gênero:</strong> {{ filme.genero }}</p>
+        <p><strong>Nota:</strong> {{ filme.nota }}</p>
+        <p><strong>Assistido:</strong> {{ filme.assistido }}</p>
+      </ion-label>
+      <ion-button (click)="openTrailer(filme.trailer)" fill="clear">
+        <ion-icon name="play-circle"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
-

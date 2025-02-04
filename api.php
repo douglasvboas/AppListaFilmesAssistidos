@@ -31,8 +31,8 @@ switch ($method) {
         break;
     case 'POST':
         $data = json_decode(file_get_contents("php://input"), true);
-        $stmt = $pdo->prepare('INSERT INTO filmes (nome, descricao, genero, classificacao, assistido) VALUES (?, ?, ?, ?, ?)');
-        $stmt->execute([$data['nome'], $data['descricao'], $data['genero'], $data['classificacao'], $data['assistido']]);
+        $stmt = $pdo->prepare('INSERT INTO filmes (id, nome, descricao, genero,  assistido, nota, estrelas) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        $stmt->execute([$data['id'], $data['nome'], $data['descricao'], $data['genero'], $data['assistido'], $data['nota'], $data['estrelas'] ]);
         echo json_encode(['status' => 'success']);
         break;
 }
